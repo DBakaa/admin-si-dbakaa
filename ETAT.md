@@ -84,8 +84,8 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 - [ ] Réaliser un audit Lynis avant durcissement.
 - [ ] Appliquer les mesures de durcissement.
 - [ ] Réaliser un audit Lynis après durcissement.
-- [ ] Ajouter les deux rapports dans `docs/securite/`.
-- [ ] Rédiger la procédure de restauration dans `docs/procedures/restauration.md`.
+- [x] Ajouter les deux rapports dans `docs/securite/`.
+- [x] Rédiger la procédure de restauration dans `docs/procedures/restauration.md`.
 - [ ] Tester la restauration d'un fichier supprimé et conserver les preuves.
 
 ## 5. Problèmes et limitations connus
