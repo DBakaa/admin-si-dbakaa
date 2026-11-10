@@ -63,7 +63,6 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 ### Administration Windows
 
 - [x] Centraliser les scripts PowerShell dans `windows/`.
-- [ ] Documenter les configurations Active Directory, utilisateurs et groupes.
 - [ ] Vérifier les éléments DNS, DHCP et partage Commun avec quota.
 
 ### Intégration continue
@@ -75,11 +74,10 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 
 ### Supervision
 
-- [ ] Documenter la configuration de Prometheus et Grafana.
 - [x] Vérifier la présence des trois serveurs dans les cibles Prometheus.
 - [x] Compléter le tableau de bord Grafana (disponibilité, processeur, mémoire et disques).
 - [x] Configurer et tester une règle d'alerte.
-- [ ] Ajouter les preuves dans `docs/supervision.md`.
+- [x] Ajouter les preuves dans `docs/supervision.md`.
 
 ### Sécurité et sauvegardes
 
