@@ -1,0 +1,56 @@
+---
+- name: Paquets de durcissement
+  ansible.builtin.apt:
+    name:
+      - ufw
+      - fail2ban
+      - python3-systemd
+      - unattended-upgrades
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Pare-feu, SSH autorise en premier
+  community.general.ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Pare-feu, regles propres au serveur
+  community.general.ufw:
+    rule: allow
+    name: "{{ item.app | default(omit) }}"
+    port: "{{ item.port | default(omit) }}"
+    proto: "{{ item.proto | default(omit) }}"
+    from_ip: "{{ item.from | default(omit) }}"
+  loop: "{{ durcissement_ufw_regles | default([]) }}"
+
+- name: Pare-feu, entrant refuse par defaut et actif
+  community.general.ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+
+- name: Fail2ban, prison sshd
+  ansible.builtin.template:
+    src: jail.local.j2
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Redemarrer fail2ban
+
+- name: Fail2ban actif au demarrage
+  ansible.builtin.service:
+    name: fail2ban
+    state: started
+    enabled: true
+
+- name: Mises a jour de securite automatiques
+  ansible.builtin.copy:
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    content: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Unattended-Upgrade "1";
+    owner: root
+    group: root
+    mode: "0644"

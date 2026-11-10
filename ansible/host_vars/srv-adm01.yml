@@ -1,0 +1,14 @@
+---
+durcissement_ufw_regles:
+  - port: "3142"
+    proto: tcp
+    from: 10.10.0.0/24
+  - port: "514"
+    proto: tcp
+    from: 10.10.0.0/24
+  - port: "9100"
+    proto: tcp
+    from: 10.10.0.30
+  - port: "3000,9090"
+    proto: tcp
+    from: 10.10.0.0/24

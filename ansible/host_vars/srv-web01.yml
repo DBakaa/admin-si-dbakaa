@@ -1,0 +1,6 @@
+---
+durcissement_ufw_regles:
+  - app: Nginx HTTP
+  - port: "9100"
+    proto: tcp
+    from: 10.10.0.30

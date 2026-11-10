@@ -1,0 +1,10 @@
+# Gere par Ansible (role durcissement)
+[DEFAULT]
+bantime  = 15m
+findtime = 10m
+maxretry = 5
+ignoreip = 127.0.0.1/8 ::1 {{ durcissement_ip_admin | join(' ') }}
+
+[sshd]
+enabled = true
+backend = systemd

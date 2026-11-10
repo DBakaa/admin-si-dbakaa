@@ -1,0 +1,79 @@
+
+PLAY [Configuration des serveurs Linux de la PME] ******************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [commun : Apt passe par le cache de SRV-ADM01] ****************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [commun : Paquets de base] ************************************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [commun : Fuseau horaire] *************************************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [commun : Compte local audit] *********************************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [commun : Cle SSH de l'intervenant pour audit] ****************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [commun : Sudo sans mot de passe pour audit] ******************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [ssh : Configuration durcie de sshd, validee avant ecriture] **************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [ssh : Configuration complete de sshd valide] *****************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [ssh : Service ssh actif au demarrage] ************************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [durcissement : Paquets de durcissement] **********************************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [durcissement : Pare-feu, SSH autorise en premier] ************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [durcissement : Pare-feu, regles propres au serveur] **********************
+ok: [srv-adm01] => (item={'port': '3142', 'proto': 'tcp', 'from': '10.10.0.0/24'})
+ok: [srv-web01] => (item={'app': 'Nginx HTTP'})
+ok: [srv-adm01] => (item={'port': '514', 'proto': 'tcp', 'from': '10.10.0.0/24'})
+ok: [srv-web01] => (item={'port': '9100', 'proto': 'tcp', 'from': '10.10.0.30'})
+ok: [srv-adm01] => (item={'port': '9100', 'proto': 'tcp', 'from': '10.10.0.30'})
+ok: [srv-adm01] => (item={'port': '3000,9090', 'proto': 'tcp', 'from': '10.10.0.0/24'})
+
+TASK [durcissement : Pare-feu, entrant refuse par defaut et actif] *************
+ok: [srv-web01]
+ok: [srv-adm01]
+
+TASK [durcissement : Fail2ban, prison sshd] ************************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [durcissement : Fail2ban actif au demarrage] ******************************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+TASK [durcissement : Mises a jour de securite automatiques] ********************
+ok: [srv-adm01]
+ok: [srv-web01]
+
+PLAY RECAP *********************************************************************
+srv-adm01                  : ok=17   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+srv-web01                  : ok=17   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
