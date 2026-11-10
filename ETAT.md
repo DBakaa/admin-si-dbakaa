@@ -55,7 +55,7 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 
 - [x] Créer et intégrer le rôle Ansible `commun`.
 - [x] Créer et intégrer le rôle Ansible `ssh`.
-- [ ] Créer et intégrer le rôle Ansible `durcissement`.
+- [x] Créer et intégrer le rôle Ansible `durcissement`.
 - [x] Créer le playbook principal `site.yml`.
 - [x] Vérifier l'idempotence des playbooks (`changed=0` au deuxième passage).
 - [x] Vérifier la gestion des secrets avec Ansible Vault.
