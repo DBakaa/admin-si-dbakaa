@@ -62,23 +62,23 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 
 ### Administration Windows
 
-- [ ] Centraliser les scripts PowerShell dans `windows/`.
+- [x] Centraliser les scripts PowerShell dans `windows/`.
 - [ ] Documenter les configurations Active Directory, utilisateurs et groupes.
 - [ ] Vérifier les éléments DNS, DHCP et partage Commun avec quota.
 
 ### Intégration continue
 
-- [ ] Créer le workflow GitHub Actions.
-- [ ] Intégrer `ansible-lint`.
-- [ ] Ajouter le contrôle syntaxique des playbooks.
-- [ ] Obtenir un pipeline vert sur GitHub.
+- [x] Créer le workflow GitHub Actions.
+- [x] Intégrer `ansible-lint`.
+- [x] Ajouter le contrôle syntaxique des playbooks.
+- [x] Obtenir un pipeline vert sur GitHub.
 
 ### Supervision
 
 - [ ] Documenter la configuration de Prometheus et Grafana.
-- [ ] Vérifier la présence des trois serveurs dans les cibles Prometheus.
-- [ ] Compléter le tableau de bord Grafana (disponibilité, processeur, mémoire et disques).
-- [ ] Configurer et tester une règle d'alerte.
+- [x] Vérifier la présence des trois serveurs dans les cibles Prometheus.
+- [x] Compléter le tableau de bord Grafana (disponibilité, processeur, mémoire et disques).
+- [x] Configurer et tester une règle d'alerte.
 - [ ] Ajouter les preuves dans `docs/supervision.md`.
 
 ### Sécurité et sauvegardes
