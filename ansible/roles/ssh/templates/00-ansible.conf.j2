@@ -1,0 +1,6 @@
+# Gere par Ansible (role ssh) : ne pas modifier a la main
+PermitRootLogin no
+MaxAuthTries {{ ssh_max_essais }}
+LoginGraceTime 30
+PubkeyAuthentication yes
+X11Forwarding no
