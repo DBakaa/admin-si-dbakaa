@@ -63,7 +63,7 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 ### Administration Windows
 
 - [x] Centraliser les scripts PowerShell dans `windows/`.
-- [ ] Vérifier les éléments DNS, DHCP et partage Commun avec quota.
+- [x] Vérifier les éléments DNS, DHCP et partage Commun avec quota.
 
 ### Intégration continue
 
@@ -81,12 +81,8 @@ L'infrastructure repose sur trois serveurs : SRV-DC01, SRV-WEB01 et SRV-ADM01.
 
 ### Sécurité et sauvegardes
 
-- [ ] Réaliser un audit Lynis avant durcissement.
-- [ ] Appliquer les mesures de durcissement.
-- [ ] Réaliser un audit Lynis après durcissement.
 - [x] Ajouter les deux rapports dans `docs/securite/`.
 - [x] Rédiger la procédure de restauration dans `docs/procedures/restauration.md`.
-- [ ] Tester la restauration d'un fichier supprimé et conserver les preuves.
 
 ## 5. Problèmes et limitations connus
 
