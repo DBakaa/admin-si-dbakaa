@@ -1,0 +1,44 @@
+---
+- name: Apt passe par le cache de SRV-ADM01
+  ansible.builtin.copy:
+    dest: /etc/apt/apt.conf.d/01proxy
+    content: |
+      Acquire::http::Proxy "{{ commun_proxy_apt }}";
+      Acquire::https::Proxy "DIRECT";
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Paquets de base
+  ansible.builtin.apt:
+    name: "{{ commun_paquets }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Fuseau horaire
+  community.general.timezone:
+    name: "{{ commun_fuseau }}"
+
+- name: Compte local audit
+  ansible.builtin.user:
+    name: audit
+    comment: Compte d'audit de l'intervenant
+    shell: /bin/bash
+    create_home: true
+
+- name: Cle SSH de l'intervenant pour audit
+  ansible.posix.authorized_key:
+    user: audit
+    key: "{{ commun_audit_cle }}"
+    exclusive: true
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Sudo sans mot de passe pour audit
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/audit
+    content: "audit ALL=(ALL) NOPASSWD: ALL\n"
+    owner: root
+    group: root
+    mode: "0440"
+    validate: /usr/sbin/visudo -cf %s

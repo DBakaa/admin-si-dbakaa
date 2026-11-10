@@ -1,0 +1,19 @@
+---
+# Variables communes aux serveurs Linux. Aucun secret ici.
+commun_fuseau: Europe/Paris
+commun_proxy_apt: "http://10.10.0.30:3142"
+commun_paquets:
+  - curl
+  - htop
+  - vim
+  - rsync
+  - needrestart
+  - sudo
+# Cle publique de l'intervenant pour le compte audit (une seule ligne)
+commun_audit_cle: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOw3qxuiLrUMaFtqys57HLEDw/zSgXdszLe5tXRfyjlu audit@intervenant"
+# Role ssh
+ssh_max_essais: 3
+# Role durcissement : adresses jamais bannies par fail2ban (ton PC, SRV-ADM01)
+durcissement_ip_admin:
+  - 10.10.0.1
+  - 10.10.0.30

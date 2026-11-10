@@ -1,0 +1,6 @@
+---
+- name: Configuration des serveurs Linux de la PME
+  hosts: linux
+  become: true
+  roles:
+    - commun
