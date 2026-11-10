@@ -1,0 +1,6 @@
+[Unit]
+Description=Sauvegarde quotidienne de SRV-WEB01
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/sauvegarde.sh

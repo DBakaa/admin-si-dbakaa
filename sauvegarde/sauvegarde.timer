@@ -1,0 +1,9 @@
+[Unit]
+Description=Lance la sauvegarde tous les jours a 2h
+
+[Timer]
+OnCalendar=*-*-* 02:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
