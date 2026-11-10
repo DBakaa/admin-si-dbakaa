@@ -8,7 +8,7 @@
         update_cache: true
         upgrade: dist
 
-    - name: needrestart présent
+    - name: Needrestart présent
       ansible.builtin.apt:
         name: needrestart
         state: present

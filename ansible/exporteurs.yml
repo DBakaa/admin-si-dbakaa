@@ -1,5 +1,5 @@
 ---
-- name: node_exporter sur les serveurs Linux
+- name: Node_exporter sur les serveurs Linux
   hosts: linux
   become: true
   tasks:
