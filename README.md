@@ -184,8 +184,8 @@ Les prochaines étapes du projet sont :
 
 Projet réalisé en binôme dans le cadre du Bachelor 3 Cybersécurité.
 
-- Membre 1 : [Nom et prénom]
-- Membre 2 : [Nom et prénom]
+- Membre 1 : COTTAR ROMAIN
+- Membre 2 : RAES YANIS
 
 ---
 
